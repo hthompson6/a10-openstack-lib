@@ -172,6 +172,3 @@ VALIDATORS = {
     'a10_type:reference': lambda validators: validate_reference,
     'a10_type:nullable': validate_nullable
 }
-
-
-
