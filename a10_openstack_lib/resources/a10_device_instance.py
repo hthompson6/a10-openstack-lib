@@ -128,5 +128,5 @@ def convert_to_lower(input):
 def convert_to_int(input):
     try:
         return int(input)
-    except AttributeError:
-        return input
+    except (ValueError, TypeError):
+        msg = _("'%s' is not an integer") % input
