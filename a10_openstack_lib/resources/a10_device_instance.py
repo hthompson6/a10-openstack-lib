@@ -102,7 +102,7 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:range': [0, 65535]
             },
-            'convert_to': lambda attr: attr.convert_to_int,
+            'convert_to': lambda attr: convert_to_int,
             'is_visible': True,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
@@ -122,5 +122,11 @@ RESOURCE_ATTRIBUTE_MAP = {
 def convert_to_lower(input):
     try:
         return input.lower()
+    except AttributeError:
+        return input
+
+def convert_to_int(input):
+    try:
+        return int(input)
     except AttributeError:
         return input
